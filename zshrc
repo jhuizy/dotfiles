@@ -92,4 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vim="mvim -v"
+alias tma="tmux attach -d -t"
+alias git-tmux="tmux new -s $(basename $(pwd))"
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
