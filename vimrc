@@ -1,5 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on
+set tabstop=4
+set expandtab
+set number
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
