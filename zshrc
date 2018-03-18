@@ -93,5 +93,17 @@ source $ZSH/oh-my-zsh.sh
 #
 alias vim="mvim -v"
 alias tma="tmux attach -d -t"
+alias tmn="tmux new-sesion"
 alias git-tmux="tmux new -s $(basename $(pwd))"
+
+source /usr/local/bin/aws_zsh_completer.sh
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
