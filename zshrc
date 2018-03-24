@@ -61,7 +61,7 @@ ZSH_THEME="bureau"
 plugins=(git bundler osx rake ruby zsh-autosuggestions vagrant)
 
 source $ZSH/oh-my-zsh.sh
-
+eval "$(fasd --init auto)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
