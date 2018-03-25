@@ -7,7 +7,7 @@ export ZSH=/Users/jordan/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bureau"
+ZSH_THEME="lambda"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -58,10 +58,12 @@ ZSH_THEME="bureau"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler osx rake ruby zsh-autosuggestions vagrant)
+plugins=(git zsh-autosuggetions bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-eval "$(fasd --init auto)"
+
+ZSH_AUTOSUGGEST_STRATEGY=default
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -95,10 +97,6 @@ alias vim="mvim -v"
 alias tma="tmux attach -d -t"
 alias tmn="tmux new-sesion"
 alias git-tmux="tmux new -s $(basename $(pwd))"
-
-source /usr/local/bin/aws_zsh_completer.sh
-
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # tabtab source for serverless package
