@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH="/Users/jordan/Library/Python/2.7/bin:$PATH"
+export PATH="/Users/jordan/.local/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jordan/.oh-my-zsh
 
@@ -62,6 +64,8 @@ plugins=(git zsh-autosuggetions bundler osx brew rake ruby zsh-completions vagra
 
 source $ZSH/oh-my-zsh.sh
 
+source <(doctl completion zsh)
+
 ZSH_AUTOSUGGEST_STRATEGY=default
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # User configuration
@@ -93,15 +97,28 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias assume-role-shell='function(){eval $(command assume-role $@);}'
 alias vim="mvim -v"
 alias tma="tmux attach -d -t"
 alias tmn="tmux new-sesion"
 alias git-tmux="tmux new -s $(basename $(pwd))"
-
-
+function glob () { 
+  grep -H -r "$1" * | less 
+}
+# reverse search
+bindkey '^R' history-incremental-search-backward
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jordan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jordan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
