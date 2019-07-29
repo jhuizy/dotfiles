@@ -1,8 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/Users/jordan/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/jordan/.local/bin:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jordan/.oh-my-zsh
 
@@ -60,11 +59,12 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggetions bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting)
+plugins=(git zsh-autosuggetions bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting tmux cabal stack)
 
 source $ZSH/oh-my-zsh.sh
 
 source <(doctl completion zsh)
+
 
 ZSH_AUTOSUGGEST_STRATEGY=default
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
@@ -86,7 +86,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -107,13 +107,6 @@ function glob () {
 }
 # reverse search
 bindkey '^R' history-incremental-search-backward
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -122,3 +115,16 @@ if [ -f '/Users/jordan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+. /Users/jordan/.nix-profile/etc/profile.d/nix.sh
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+export GOPATH=~/Documents/code/go
+source $HOME/.cargo/env
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
