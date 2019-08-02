@@ -22,6 +22,9 @@ set number
 ""stop wrapping my words
 set nowrap
 
+"mouse things
+set mouse=a
+
 "make commands easier to input
 map ; :
 

@@ -39,7 +39,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'sbdchd/neoformat' " beautiful code
 Plug 'w0rp/ale' " async linting
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator' " Window navigating between tmux + vim
 
 " Jsonnet
 Plug 'google/vim-jsonnet'
