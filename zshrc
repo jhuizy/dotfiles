@@ -4,11 +4,12 @@ export PATH="/Users/jordan/.local/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jordan/.oh-my-zsh
-
+export EDITOR=nvim
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="lambda"
+SOLARIZED_THEME="dark"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -59,7 +60,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggetions bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting tmux cabal stack)
+plugins=(git bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting tmux cabal stack)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,7 +99,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias assume-role-shell='function(){eval $(command assume-role $@);}'
-alias vim="mvim -v"
+alias mux="tmuxinator"
+alias vim="nvim"
 alias tma="tmux attach -d -t"
 alias tmn="tmux new-sesion"
 alias git-tmux="tmux new -s $(basename $(pwd))"
@@ -128,3 +130,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+eval "$(direnv hook zsh)"
+. ~/.zsh/tmuxinator.zsh 
