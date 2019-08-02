@@ -11,8 +11,10 @@ endif
 
 " Theme
 syntax enable
-colorscheme OceanicNext
-let g:airline_theme='oceanicnext'
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+set background=dark    " Setting dark mode
+let g:gruvbox_contrast_dark='soft'
 
 ""show me the numbers
 set number

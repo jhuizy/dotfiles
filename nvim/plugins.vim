@@ -1,8 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'joshdick/onedark.vim'
-Plug 'mhartington/oceanic-next'
-Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 
 " utilities
 Plug 'scrooloose/nerdtree'
@@ -41,6 +39,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'sbdchd/neoformat' " beautiful code
 Plug 'w0rp/ale' " async linting
+Plug 'christoomey/vim-tmux-navigator'
 
 " Jsonnet
 Plug 'google/vim-jsonnet'
