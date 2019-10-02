@@ -87,17 +87,20 @@ tabspaces: 8
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
-  #normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux) monospace
-    #   - (Windows) Consolas
-    #family: monospace
+  normal:
+    family: Fira Code 
+    style: Regular
+  #  # The `style` can be specified to pick a specific face.
+  #  #style: Regular
 
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+  bold:
+    family: Fira Code 
+    style: Bold
+
+  italic:
+    family: Fira Code 
+    style: Italic
+
 
   # Bold font face
   #bold:
