@@ -22,6 +22,9 @@ set number
 ""stop wrapping my words
 set nowrap
 
+""dont leave .swp files
+set noswapfile
+
 "mouse things
 set mouse=a
 
@@ -75,14 +78,8 @@ let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '+'
 let NERDTreeDirArrowCollapsible = '-'
 
-let g:ale_fixers = {
-\  'javascript': ['eslint', 'prettier']
-\}
 " auto install powerline fonts
 let g:airline_powerline_fonts = 1
-
-" enable deoplete on startup
-let g:deoplete#enable_at_startup = 1
 
 " Stop making big tabs
 set shiftwidth=2
