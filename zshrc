@@ -133,3 +133,16 @@ bindkey "^[[1;5D" backward-word
 
 eval "$(direnv hook zsh)"
 . ~/.zsh/tmuxinator.zsh 
+
+# gitignore.io cli
+function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
