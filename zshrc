@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Python/3.7/bin:$PATH
 export PATH="/Users/jordan/.local/bin:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jordan/.oh-my-zsh
 export EDITOR=nvim
@@ -112,14 +112,6 @@ bindkey '^R' history-incremental-search-backward
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jordan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jordan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jordan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-. /Users/jordan/.nix-profile/etc/profile.d/nix.sh
-
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
 export GOPATH=~/Documents/code/go
@@ -146,3 +138,5 @@ function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
