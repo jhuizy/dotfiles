@@ -58,6 +58,7 @@ Plug 'FrigoEU/psc-ide-vim', { 'for': ['purescript', 'purs'] }
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
+Plug 'pbrisbin/vim-syntax-shakespeare'
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
