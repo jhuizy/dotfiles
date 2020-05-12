@@ -1,16 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Python/3.7/bin:$PATH
-export PATH="/Users/jordan/.local/bin:$PATH"
+export PATH="/Users/$USER/.local/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jordan/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 export EDITOR=nvim
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="lambda"
 SOLARIZED_THEME="dark"
-
+. /Users/$USER/.nix-profile/etc/profile.d/nix.sh
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -131,12 +131,12 @@ function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh
+[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jordan/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
+[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
