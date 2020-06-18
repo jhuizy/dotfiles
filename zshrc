@@ -139,4 +139,4 @@ function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
 export PATH="/usr/local/opt/libpq/bin:$PATH"
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
+if [ -e /Users/jordan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jordan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
