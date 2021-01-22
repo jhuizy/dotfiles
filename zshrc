@@ -1,8 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Python/3.7/bin:$PATH
-export PATH="/Users/$USER/.local/bin:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
 export EDITOR=nvim
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -10,7 +5,6 @@ export EDITOR=nvim
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="lambda"
 SOLARIZED_THEME="dark"
-. /Users/$USER/.nix-profile/etc/profile.d/nix.sh
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -60,14 +54,11 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler osx brew rake ruby zsh-completions vagrant docker aws zsh-syntax-highlighting tmux cabal stack)
+plugins=(git bundler osx brew zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-source <(doctl completion zsh)
-
-
-ZSH_AUTOSUGGEST_STRATEGY=default
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # User configuration
 
@@ -87,7 +78,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/jordan.huizenga"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -107,36 +98,25 @@ alias git-tmux="tmux new -s $(basename $(pwd))"
 function glob () { 
   grep -H -r "$1" * | less 
 }
+
+# git aliases
+alias gp="git push"
+alias gc="git commit -m"
+alias gca="git commit --amend"
+alias gpu="git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+
 # reverse search
 bindkey '^R' history-incremental-search-backward
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
-export GOPATH=~/Documents/code/go
-source $HOME/.cargo/env
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-eval "$(direnv hook zsh)"
-. ~/.zsh/tmuxinator.zsh 
-
 # gitignore.io cli
 function gi() { curl -sLw "\n" https://www.gitignore.io/api/$@ ;}
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/$USER/Documents/work/water/jobwatch/node_modules/tabtab/.completions/slss.zsh
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-if [ -e /Users/jordan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jordan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# This check to make sure the GPG Agent is running and if not, starts it
+if [[ ! -S ~/.gnupg/S.gpg-agent && ! -n "$(pgrep gpg-agent)" ]]; then
+  eval $(eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf))
+fi
